@@ -1,0 +1,265 @@
+.header {
+  height: 5rem;
+  background-color: #e0ffcd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  top: 0;
+  z-index: 1000;
+}
+
+.headerContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap; 
+}
+
+.logoLink {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logoLink:hover {
+  transform: scale(1.05);
+}
+
+.searchBarLg {
+  display: none;
+}
+
+.userActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.userLink {
+  font-size: 1.75rem;
+  color: #407088;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.userLink:hover {
+  color: #407088;
+  transform: scale(1.1);
+}
+
+.logoutLink {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color:  white;
+  background-color: #407088;
+  border: 1px solid  black;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.logoutLink:hover {
+  background-color: #3b4657;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.notificationIcon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.notificationIcon:hover {
+  transform: scale(1.1);
+  color: #407088;
+}
+.notificationPopup {
+  position: absolute;
+  top: 6rem;
+  right: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px; /* Increased border radius for a more rounded look */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Softer shadow for a floating effect */
+  padding: 1.5rem; /* Increased padding for more space inside the popup */
+  min-width: 320px; /* Slightly wider to accommodate content better */
+  z-index: 1001;
+  animation: fadeIn 0.3s ease-out; /* Added fade-in animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popupContent h3 {
+  margin-bottom: 1rem; /* Increased space below the heading */
+  font-size: 1.25rem; /* Slightly larger font size */
+  color: #333;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0; /* Added bottom border to separate heading */
+}
+
+.notificationItem {
+  padding: 1rem 0; /* More padding for better spacing */
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.notificationItem:hover {
+  background-color: #f9f9f9; /* Light background color on hover */
+}
+
+.notificationItem:last-child {
+  border-bottom: none;
+}
+
+.notificationItem span {
+  display: block;
+  color: #333;
+  font-size: 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  padding-left: 10px; /* Align buttons to the right */
+}
+
+.acceptButton,
+.declineButton {
+  padding: 0.5rem 0.8rem; /* Increased padding for better touch targets */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.acceptButton {
+  background-color: #407088;
+  color: #ffffff;
+}
+
+.acceptButton:hover {
+  background-color: #407088;
+}
+
+.declineButton {
+  background-color: #e0ffcd;
+  color: black;
+}
+
+.declineButton:hover {
+  background-color: #407088;
+}
+
+@media (min-width: 768px) {
+  .searchBarLg {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    max-width: 450px;
+    border: 1px solid #132743; 
+    border-radius: 50px; 
+    overflow: hidden;
+    transition: all 0.3s ease;
+    
+  }
+
+  .searchInput {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: white; 
+  }
+
+  .searchButton {
+    width: 70px; 
+    height: 45px;
+    background-color: #407088;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:  #ffcab0; 
+    cursor: pointer;
+    transition:  0.3s ease;
+    border-radius: 0 50px 50px 0;
+    border: none;
+    font-size: medium;
+    
+  }
+
+  .searchButton:hover {
+    background-color: #407088; 
+  }
+}
+
+
+@media (max-width: 767px) {
+  .header {
+    margin-bottom: 20vh;
+    position: relative;
+  }
+  .headerContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.75rem;
+  }
+
+  .logoLink {
+    order: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .userActions {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .searchBarLg {
+    display: flex;
+    order: 3;
+    width: 100%;
+    max-width: none;
+    margin-top: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: #ffcbcb;
+  }
+
+  .searchInput {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: none;
+    outline: none;
+    font-size: 0.9rem; 
+    background-color: transparent;
+  }
+
+  .searchButton {
+    padding: 0.6rem;
+    height: 00%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+}
